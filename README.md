@@ -17,3 +17,11 @@ Create Docker image:  **docker build -t myweb:1 .**
 Create and run container: **docker run --name c1 -d -p 8888:8080 myweb:1**
 
 i expose port on 8888 instend of 8888 so the url changes to **http://server-ip:8888/aweb/Index.html**
+
+### Remove existing docker containers and images
+
+docker stop $(docker ps -q)
+
+docker rm $(docker ps -aq)
+
+docker rmi $(docker image ls -q)
